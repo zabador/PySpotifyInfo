@@ -1,3 +1,3 @@
 function spotify(){
-	echo `python ~/.scripts/spotify_info.py`
+	echo `python ~/.shellStuff/PySpotifyInfo/spotify_info.py`
 }
