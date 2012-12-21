@@ -19,8 +19,6 @@ try:
 	iface = dbus.Interface(spotify, interface_name)
 	props = iface.Get(dbus_interface, 'Metadata')
 
-	print props
-
 	if(props.has_key(artist_desc)):
 		artist = props.get(artist_desc)[0]
 	
@@ -28,7 +26,7 @@ try:
 		title = props.get(title_desc)
 
 	message = '%s - %s' % (artist, title)
-except dbus.exceptions.DBusException, e:
+except Exception, e:
 	message = 'SPOTIFY'
 
 sys.stdout.write(message)
